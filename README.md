@@ -30,22 +30,28 @@ You must create your own credentials.json to run this project:
     .
 
     Create a new project (or select an existing one).
-
-    Navigate to APIs & Services > Credentials.
-
-    Click Create Service Account and give it a name.
-
-    Under the service account, create a key in JSON format.
-
-    Download the JSON file and save it as credentials.json in the project root.
-
-    Share your Google Sheet (where user data will be stored) with the service account email (found in the JSON under client_email).
+# Search "Google Sheets API" enable it.
+# Search "Google Drive API" enable it.
+    Navigate to APIs & Services > Credentials
+    Click Create Service Account and give it a name. (ex: flask-auth-service)
+    Continue (Skip Optional Skip)
+    
+# Download the Credentials JSON
+    On the Credentials page, find your service account (under "Servicee Accounts")
+    Click on the service account email
+    Go to the "Keys" tab
+    Click "Add Key" -> "Create a new key"
+    Click "Create"
+    A JSON file will download automatically
+    
+# Rename this file to "credentials.json"    
+    Move it into correct folder
 
 ⚠️ Do NOT push this file to GitHub. Add it to .gitignore if it isn’t already.
 
 Configure your Google Sheet:
 
-    Create a Google Sheet named UserDatabase.
+    Create a Google Sheet named UserDatabase (to match with the code in test_connection.py).
 
     Add the following headers in the first row:
 
