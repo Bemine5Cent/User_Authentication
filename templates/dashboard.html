@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="dashboard-box">
+            <h1>Dashboard</h1>
+            
+            {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                    {% for category, message in messages %}
+                        <div class="alert alert-{{ category }}">{{ message }}</div>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+            
+            <div class="welcome-section">
+                <h2>Welcome, {{ username }}! 🎉</h2>
+                <p>You have successfully logged into your account.</p>
+            </div>
+            
+            <div class="dashboard-content">
+                <div class="card">
+                    <h3>Profile Information</h3>
+                    <p><strong>Username:</strong> {{ username }}</p>
+                    <p><strong>Status:</strong> Active</p>
+                </div>
+                
+                <div class="card">
+                    <h3>Quick Stats</h3>
+                    <p>🔐 Account is secure</p>
+                    <p>✅ All systems operational</p>
+                </div>
+            </div>
+            
+            <a href="{{ url_for('logout') }}" class="btn btn-logout">Logout</a>
+        </div>
+    </div>
+</body>
+</html>

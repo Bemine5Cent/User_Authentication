@@ -1,0 +1,13 @@
+# for web framework
+Flask==3.0.0
+Werkzeug==3.0.1
+
+# for googlesheet database
+gspread==6.1.2
+google-auth==2.23.0
+google-auth-oauthlib==1.1.0
+google-auth-httplib2==0.1.1
+
+# for pw encryption
+bcrypt==4.1.1
+

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - Secure Authentication</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+
+        <div class="logo-container">
+            <img src="{{ url_for('static', filename='logos.png') }}" alt="Security Shield Logo" class="logo">
+            <h1 class="system-title">User Authentication System</h1>
+            <p class="system-subtitle">Secure Registration Portal</p>
+        </div>
+
+        <div class="auth-box">
+            <div class="auth-header">
+                <h2>Create Account</h2>
+                <p>Register a new secure account</p>
+            </div>
+
+            {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                    {% for category, message in messages %}
+                        <div class="alert alert-{{ category }}">
+                            <span>{{ message }}</span>
+                        </div>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+
+            <form method="POST" action="{{ url_for('signup') }}" class="auth-form">
+
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input
+                        type="text"
+                        id="username"
+                        name="username"
+                        value="{{ username | default('') }}"
+                        placeholder="Choose a username"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        value="{{ email | default('') }}"
+                        placeholder="example@domain.com"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input
+                        type="password"
+                        id="password"
+                        name="password"
+                        placeholder="Create a strong password"
+                        required
+                    >
+
+                    <div class="password-requirements">
+                        <ul>
+                            <li>At least 8 characters</li>
+                            <li>1 uppercase letter</li>
+                            <li>1 number</li>
+                            <li>1 special character</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary">
+                    Create Account
+                </button>
+            </form>
+
+            <div class="auth-footer">
+                <p>Already have an account? <a href="{{ url_for('login') }}">Login here</a></p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
