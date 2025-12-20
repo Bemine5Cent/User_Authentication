@@ -1,7 +1,7 @@
 # User Authentication System
 
 ## Short Description
-This project is a **modern user authentication system** built with Python and Flask. It features secure login, password encryption with bcrypt, account locking after multiple failed login attempts, and stores user data in **Google Sheets**.
+This project is a ** user authentication system** built with Python and Flask. It features secure login, password encryption with bcrypt, account locking after multiple failed login attempts, and stores user data in **Google Sheets**.
 
 ---
 
@@ -24,7 +24,7 @@ pip install -r requirements.txt
 
 Set up Google Sheets credentials:
 
-Your teacher or anyone running this project must create their own credentials.json:
+You must create your own credentials.json to run this project:
 
     Go to the Google Cloud Console
     .
