@@ -30,7 +30,6 @@ You must create your own credentials.json to run this project:
     .
 
     Create a new project (or select an existing one).
-# Search "Google Sheets API" enable it.
 # Search "Google Drive API" enable it.
     Navigate to APIs & Services > Credentials
     Click Create Service Account and give it a name. (ex: flask-auth-service)
